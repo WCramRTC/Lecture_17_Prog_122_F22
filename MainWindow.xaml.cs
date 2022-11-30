@@ -24,17 +24,12 @@ namespace Lecture_17_Prog_122_F22
     public partial class MainWindow : Window
     {
 
-    
-
         public MainWindow()
         {
             InitializeComponent();
          
-
         }
 
-    
     }
-
 
 }
