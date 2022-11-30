@@ -5,4 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lecture_17_Prog_122_F22"
         mc:Ignorable="d"
-        Title="MainWindow" Height="305" Width="559"/>
+        Title="MainWindow" Height="445" Width="794">
+    <Canvas Background="#FF4AA7D8">
+
+        <!--Group Box for Form Controls-->
+        <GroupBox Height="213" Header="GroupBox" Width="199" Canvas.Left="29" Canvas.Top="21" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <GroupBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4FAFF9"/>
+                    <GradientStop Color="#FF252121" Offset="1"/>
+                    <GradientStop Color="#FF3E76A2" Offset="0.424"/>
+                </LinearGradientBrush>
+            </GroupBox.Background>
+            <Canvas>
+
+                <!--First name-->
+                <TextBox x:Name="txtFName" Canvas.Left="34" TextWrapping="Wrap"  Canvas.Top="44" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <!--Last Name-->
+                <TextBox x:Name="txtLName" Canvas.Left="34" TextWrapping="Wrap"  Canvas.Top="93" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <!--Button Display Info-->
+                <Button x:Name="btnDisplayName" Content="Display Name" Canvas.Left="38" Canvas.Top="132" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="112" Click="btnDisplayName_Click"         />
+
+                <!--Label First Name-->
+                <Label Content="First Name" Canvas.Left="60" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="13"/>
+
+                <!--Label Last Name-->
+                <Label Content="Last Name" Canvas.Left="60" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Canvas>
+
+
+        </GroupBox>
+
+        <RichTextBox Height="182" Width="215" Canvas.Left="256" Canvas.Top="35" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <FlowDocument>
+                <Paragraph>
+                    <Run x:Name="rtbDisplay" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <CheckBox x:Name="chkPepperoni" Content="Pepperoni" Canvas.Left="29" Canvas.Top="249"/>
+        <CheckBox x:Name="chkMushroom" Content="Mushroom" Canvas.Left="29" Canvas.Top="281" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkOlives" Content="Olives" Canvas.Left="29" Canvas.Top="315" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+        <!--Radio Button Group Box-->
+
+
+        <ListBox x:Name="lbNumbers" Height="172" Width="199" Canvas.Left="155" Canvas.Top="247"/>
+
+
+        <!--List View-->
+        <!--Attach ItemsSource in .cs file-->
+        <ListView x:Name="lvUsers" Height="315" Width="249"  Canvas.Left="516" Canvas.Top="21">
+            <ListView.View>
+                <GridView>
+                    <!--Display Member Binding-->
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Program" DisplayMemberBinding="{Binding Program}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Canvas>
+
+</Window>
